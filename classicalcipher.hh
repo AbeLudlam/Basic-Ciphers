@@ -113,13 +113,30 @@ public:
   }
 
   virtual std::string encode(const std::string& plaintext) {
-    // TODO rewrite this function and delete this comment
-    return "";
+   assert(plaintext.length() > 0);
+   assert(all_letters(plaintext));
+    std::string ciphertext;
+    for (char in : plaintext) {
+      char out;
+      out = int_to_char(((char_to_int(in)+_key)%26));
+      ciphertext.push_back(out);
+    }
+    assert(all_letters(ciphertext));
+    return ciphertext;
   }
   
   virtual std::string decode(const std::string& ciphertext) {
-    // TODO rewrite this function and delete this comment
-    return "";
+    assert(ciphertext.length() > 0);
+    assert(all_letters(ciphertext));
+    std::string plaintext;
+    for (char in : ciphertext) {
+      char out;
+      out = int_to_char(((char_to_int(in)+26-_key)%26));
+      plaintext.push_back(out);
+    }
+    assert(all_letters(plaintext));
+    return plaintext;
+   
   }
 
 private:
