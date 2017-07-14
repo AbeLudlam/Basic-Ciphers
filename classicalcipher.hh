@@ -447,8 +447,8 @@ public:
 	if(firstchar_row == secondchar_row)
 	{
 		
-		char out1 = table[firstchar_row][(firstchar_col+1)%5];
-		char out2 = table[secondchar_row][(secondchar_col+1)%5];
+		char out1 = table[firstchar_row][(firstchar_col-1)%5];
+		char out2 = table[secondchar_row][(secondchar_col-1)%5];
 		plaintext.push_back(out1);
 		plaintext.push_back(out2);
 		
@@ -456,8 +456,8 @@ public:
 	//Check to see if the digrim characters are in the same column, then make the ciphertext the character below them if they are.
 	if(firstchar_col == secondchar_col)
 	{
-		char out1 = table[(firstchar_row+1)%5][firstchar_col];
-		char out2 = table[(secondchar_row+1)%5][secondchar_col];
+		char out1 = table[(firstchar_row-1)%5][firstchar_col];
+		char out2 = table[(secondchar_row-1)%5][secondchar_col];
 		plaintext.push_back(out1);
 		plaintext.push_back(out2);
 		
