@@ -1,4 +1,6 @@
-
+// Programmer/Professor: Kevin Wortman
+// Test file for you to run and link with classicalciphers.hh
+// This is how I will grade you, so make sure your programs work with this
 #include <iostream>
 #include <string>
 
